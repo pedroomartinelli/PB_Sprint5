@@ -7,11 +7,14 @@ Contexto:
     Dado que o modal de login esteja aberto
 
 Esquema do Cenário: validar a autenticação do usuário
-    Quando realizar login "<tipo>"
+    Quando realizar login informando os campos "<username>" e "<password>"
+    E a validação ser "<tipo>"
     Então mensagem deve ser exibida "<msg>"
     Exemplos:
-    |tipo||msg| 
-    |válido||| 
-    |inválido||Incorrect user name or password.| 
-    |user obrigatório||Username field is required.| 
-    |senha obrigatória||Password field is required.| 
+    |username    |password      |tipo       |msg                             |
+    |teste       |Teste123      |válido     |                                |
+    |teste_errado|Testeerrado123|inválido   |Incorrect user name or password.|
+    |            |Teste123      |obrigatório|Username field is required.     |
+    |teste       |              |obrigatório|Password field is required.     |
+
+    
