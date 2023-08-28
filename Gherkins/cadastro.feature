@@ -1,3 +1,7 @@
+#language: pt
+
+@regression
+@user_register
 Funcionalidade: Cadastro de usuário
   COMO usuário do ecommerce AdvantageOnlineShopping
   QUERO poder realizar um cadastro 
