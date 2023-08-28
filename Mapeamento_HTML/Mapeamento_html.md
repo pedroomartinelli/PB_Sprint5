@@ -9,5 +9,5 @@ __________________________________________________
 |             Divvino           || 
 |---	|---	                |
 |ARY_BTN_CATEGORY|[blockclass=headerMenuDesktopItem]|  
-|ARY_BTN_CATEGORY|#div-controlLogin    |   	
+|ARY_PRODUCT_BOX|[class^=vtex-product-summary-2-x-element]|   	
 |ARY_BTN_CATEGORY|#div-controlSignup| 
