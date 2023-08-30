@@ -9,9 +9,9 @@ __________________________________________________
 |             Divvino           || 
 |---	|---	                |
 |ARY_BTN_CATEGORY|[blockclass=headerMenuDesktopItem]|  
-|ARY_PRODUCT_BOX|[class^=vtex-product-summary-2-x-element]|   	
-|ICON_LOUPE|//body/div[5]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/div[1]/span[1]/div[1]/div[1]/button[1]|
-|BTN_CART|//body/div[5]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/aside[1]/div[1]/div[1]/button[1]|
+|ARY_PRODUCT_BOX|div#gallery-layout-container div.vtex-search-result-3-x-galleryItem|   	
+|ICON_LOUPE|div.vtex-store-components-3-x-externalSearchButtonWrapper button.vtex-store-components-3-x-searchBarIcon |
+|BTN_CART|div.divvino-minicart-2-x-minicartContainer button.vtex-button|
 
 __________________________________________________
 
