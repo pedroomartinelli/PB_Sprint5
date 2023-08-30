@@ -18,6 +18,6 @@ __________________________________________________
 |             Google           || 
 |---	|---	                |
 |LABEL_SEARCH|#APjFqb           |  
-|BTN_SEARCH|//body/div[1]/div[3]/form[1]/div[1]/div[1]/div[2]/div[2]/div[6]/center[1]/input[1]  |   	
-|ARY_SEARCH_LINKS|//div[@id='rso']|  
+|BTN_SEARCH|div[class="FPdoLc lJ9FBc"] center .gNO89b|   	
+|ARY_SEARCH_LINKS|.v7W49e .MjjYud|  
 
