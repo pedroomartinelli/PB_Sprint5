@@ -4,6 +4,7 @@ require 'rspec'
 require 'capybara'
 require 'site_prism'
 require 'capybara/cucumber'
+require 'pry'
 
 
 ENVIRONMENT = ENV['ENVIRONMENT']
@@ -35,3 +36,4 @@ end
 
 Capybara.default_driver = :my_chrome
 Capybara.app_host=URL
+Capybara.default_max_wait_time = 10
