@@ -1,4 +1,4 @@
-Quando('acessar a página do produto') do
+  Quando('acessar a página do produto') do
     @search_results_page.access_product_page(1)
     @product_page = Pages::ProductPage.new
   end
@@ -18,4 +18,35 @@ Quando('acessar a página do produto') do
       Quando realizar uma busca por um produto existente
       E acessar a página do produto
     }
+  end
+
+  Quando('aumentar a quantidade do produto') do
+    @product_quantity_before = @product_page.input_quantity_product.value
+    @product_page.btn_add_product.click
+  end
+  
+  Então('deverá alterar a quantidade exibida na PDP') do
+    expect(@product_page.input_quantity_product.value).to be > @product_quantity_before
+  end
+
+  Quando('adicionar o produto ao carrinho') do 
+    @product_page.header.btn_cart.hover
+    if @product_page.header.empty_cart.visible?
+      @product_cart_quantity_before = 0
+      @product_page.btn_save_to_cart.click
+      @product_page.header.btn_cart.click
+      @cart_page = Pages::CartPage.new
+      binding.pry
+    else 
+      @product_page.header.btn_cart.click
+      @cart_page = Pages::CartPage.new 
+      @product_cart_quantity_before = @cart_page.label_quantity.text.to_i 
+      page.go_back
+      @product_page.btn_save_to_cart.click
+      @product_page.header.btn_cart.click
+    end    
+  end
+  
+  Então('o produto deverá ser adicionado com a quantidade aumentada') do
+    expect(@cart_page.label_quantity.text.to_i).to be > @product_cart_quantity_before
   end

@@ -3,6 +3,7 @@ require_relative '../sections/header'
 module Pages
     class Home < SitePrism::Page
         set_url '/'
+        
         section :header, Sections::Header, 'header'
         element :loader, 'body > .loader'
         element :input_email_contact_us, 'input[name="emailContactUs"]'

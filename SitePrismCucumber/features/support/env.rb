@@ -14,19 +14,23 @@ URL = ENVIRONMENT_CONFIG['url']
 
 Capybara.register_driver :my_chrome do |app|
    
-    options = Selenium::WebDriver::Chrome::Options.new
-    options.add_argument('--incognito')
-    options.add_argument('--start-maximized')
-    options.add_argument('--window-size-1420-835')
-    options.add_argument('--ignore-ssl-errors')
-    options.add_argument('--certificate-errors')
-    options.add_argument('--disable-popup-blocking')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--acceptInsecureCerts=true')
-    options.add_argument('--disable-gpu')
-    options.add_argument('--disable-translate')
-    options.add_argument('--disable-impl-side-painting')
-    options.add_argument('--debug_level=3')
+    args = [
+        '--incognito',
+        '--start-maximized',
+        '--window-size=1420,835',
+        '--ignore-ssl-errors',
+        '--certificate-errors',
+        '--disable-popup-blocking',
+        '--no-sandbox',
+        '--acceptInsecureCerts=true',
+        '--disable-gpu',
+        '--disable-translate',
+        '--disable-impl-side-painting',
+        '--debug_level=3'
+      ]
+      
+      options = Selenium::WebDriver::Chrome::Options.new
+      args.each { |arg| options.add_argument(arg) }
 
 
     if ENV['HEADLESS']
