@@ -10,6 +10,7 @@ module Pages
         element :btn_add_product, '.plus'
         element :input_quantity_product, 'input[name="quantity"]'
         element :btn_save_to_cart, 'button[name="save_to_cart"]'
+        element :product_name, '#Description .roboto-regular'
 
 
     end

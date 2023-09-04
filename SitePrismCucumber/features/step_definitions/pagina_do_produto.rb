@@ -31,13 +31,15 @@
 
   Quando('adicionar o produto ao carrinho') do 
     @product_page.header.btn_cart.hover
-    if @product_page.header.empty_cart.visible?
-      @product_cart_quantity_before = 0
-      @product_page.btn_save_to_cart.click
-      @product_page.header.btn_cart.click
-      @cart_page = Pages::CartPage.new
+    begin
+      if @product_page.header.empty_cart.visible?
+        @product_cart_quantity_before = 0
+        @product_page.btn_save_to_cart.click
+        @product_page.header.btn_cart.click
+        @cart_page = Pages::CartPage.new  
+      end
+    rescue Capybara::ElementNotFound
       binding.pry
-    else 
       @product_page.header.btn_cart.click
       @cart_page = Pages::CartPage.new 
       @product_cart_quantity_before = @cart_page.label_quantity.text.to_i 
@@ -49,4 +51,8 @@
   
   Então('o produto deverá ser adicionado com a quantidade aumentada') do
     expect(@cart_page.label_quantity.text.to_i).to be > @product_cart_quantity_before
+  end
+
+  Então('o produto deverá ser adicionado ao carrinho com sucesso') do
+    expect(@product_page.product_name.text).to eq(@cart_page.cart_product_name.text)
   end
